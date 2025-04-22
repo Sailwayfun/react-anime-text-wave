@@ -1,0 +1,39 @@
+.text_box {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  white-space: pre-wrap; /* Preserve spaces */
+  margin-bottom: 1em; /* Space between lines */
+}
+
+/* starting quote */
+.text_box:first-of-type {
+  margin-right: 1rem;
+}
+
+/* ending quote */
+.text_box:last-of-type {
+  margin-left: 1.25rem;
+}
+
+.letter {
+  display: inline-block;
+  transform-origin: 0 100%;
+  transform-style: preserve-3d;
+  opacity: 0;
+  /* Initial state matching Dogstudio's style */
+  transform: translate3d(80px, 50px, -300px) scaleY(0.01) rotateX(-90deg)
+    rotate(-35deg);
+}
+
+/* Add proper spacing for space characters */
+.letter[data-char=" "] {
+  margin-right: 0.5em;
+}
+
+/* Optional: Disable animation when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .letter {
+    transform: none;
+    opacity: 1;
+  }
+}
