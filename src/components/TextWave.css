@@ -1,18 +1,46 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding: 2.5rem;
+  max-width: 640px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-right: 0;
+  position: relative;
+}
+
+.text_box {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.letter {
+  transform-origin: 50% 100%;
+  font-size: 3.25rem;
+  font-weight: 400;
+  color: #fff;
+}
+
 .text_box {
   perspective: 1000px;
   transform-style: preserve-3d;
   white-space: pre-wrap; /* Preserve spaces */
-  margin-bottom: 1em; /* Space between lines */
+  margin-bottom: 0.5em; /* Space between lines */
 }
 
-/* starting quote */
-.text_box:first-of-type {
-  margin-right: 1rem;
+.text_box.starting-quote,
+.text_box.closing-quote {
+  font-style: italic;
+  margin-top: auto;
 }
 
-/* ending quote */
-.text_box:last-of-type {
-  margin-left: 1.25rem;
+.text_box.starting-quote {
+  position: absolute;
+  left: -2.5rem;
 }
 
 .letter {
@@ -27,7 +55,7 @@
 
 /* Add proper spacing for space characters */
 .letter[data-char=" "] {
-  margin-right: 0.5em;
+  margin-right: 0.25rem;
 }
 
 /* Optional: Disable animation when user prefers reduced motion */

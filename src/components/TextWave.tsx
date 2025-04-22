@@ -7,12 +7,19 @@ import {
 import { useEffect, useRef } from "react";
 import "./TextWave.css";
 
+type TextType = "starting-quote" | "closing-quote" | "text";
+
 interface TextWaveProps {
   text: { name: string; id: string }[];
   index: number;
+  type?: TextType;
 }
 
-export default function TextWave({ text, index }: TextWaveProps) {
+export default function TextWave({
+  text,
+  index,
+  type = "text",
+}: TextWaveProps) {
   const scope = useRef<Scope | null>(null);
   const root = useRef<HTMLDivElement>(null);
   const timeline = useRef<Timeline | null>(null);
@@ -63,7 +70,7 @@ export default function TextWave({ text, index }: TextWaveProps) {
   }, [index]);
 
   return (
-    <div ref={root} className="text_box">
+    <div ref={root} className={`text_box ${type}`}>
       {text.map((char) => (
         <span key={char.id} className="letter" data-char={char.name}>
           {char.name}

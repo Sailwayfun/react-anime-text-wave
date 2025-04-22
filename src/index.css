@@ -1,5 +1,4 @@
 /* font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   font-family: "Poppins", sans-serif;
@@ -7,6 +6,10 @@
 
 body {
   background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
 }
 
 body::before {
@@ -25,25 +28,4 @@ body::before {
     background: url("./assets/g-pic@2x.png") no-repeat;
     background-size: 1125px 1125px;
   }
-}
-
-.wrapper {
-  display: flex;
-  align-items: center;
-  padding: 2.5rem 0;
-  max-width: 640px;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-.text_box {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.letter {
-  transform-origin: 50% 100%;
-  font-size: 3.25rem;
-  font-weight: 700;
-  color: #fff;
 }
