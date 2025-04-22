@@ -6,16 +6,31 @@
 }
 
 body {
-  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
-  background-size: 400% 400%;
+  background: #000;
 }
 
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1125px;
+  height: 1125px;
+  background: url("./assets/g-pic.png") no-repeat;
+  background-size: 1125px 1125px;
+}
+
+@media (min-width: 768px) {
+  body::before {
+    background: url("./assets/g-pic@2x.png") no-repeat;
+    background-size: 1125px 1125px;
+  }
+}
 
 .wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 6rem 0;
+  padding: 2.5rem 0;
   max-width: 640px;
   flex-wrap: wrap;
   margin: 0 auto;
