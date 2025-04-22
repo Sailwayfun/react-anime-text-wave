@@ -5,6 +5,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+}
+
 
 .wrapper {
   display: flex;
@@ -25,4 +30,5 @@
   transform-origin: 50% 100%;
   font-size: 3.25rem;
   font-weight: 700;
+  color: #fff;
 }
