@@ -5,6 +5,16 @@
   margin-bottom: 1em; /* Space between lines */
 }
 
+/* starting quote */
+.text_box:first-of-type {
+  margin-right: 1rem;
+}
+
+/* ending quote */
+.text_box:last-of-type {
+  margin-left: 1.25rem;
+}
+
 .letter {
   display: inline-block;
   transform-origin: 0 100%;

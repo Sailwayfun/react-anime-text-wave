@@ -7,11 +7,13 @@ const getCharArray = (text: string) =>
   }));
 
 const LINES = [
-  "\"The best way",
+  "\"",
+  "The best way",
   "to learn React",
   "is to build a project",
   "and practice",
-  "every day\"",
+  "every day",
+  "\""
 ].map((line) => ({
   text: line,
   id: crypto.randomUUID(),
