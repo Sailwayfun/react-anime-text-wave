@@ -1,17 +1,27 @@
 import TextWave from "./components/TextWave";
 
-const text = "Best way to learn React is to build a project";
+const getCharArray = (text: string) =>
+  text.split("").map((char) => ({
+    name: char,
+    id: crypto.randomUUID(),
+  }));
 
-const textArray = text.split(" ").map((word) => ({
-  name: word,
+const LINES = [
+  "\"The best way",
+  "to learn React",
+  "is to build a project",
+  "and practice",
+  "every day\"",
+].map((line) => ({
+  text: line,
   id: crypto.randomUUID(),
 }));
 
 export default function App() {
   return (
     <div className="wrapper">
-      {textArray.map((text) => (
-        <TextWave key={text.id} text={text} />
+      {LINES.map((line, index) => (
+        <TextWave key={line.id} text={getCharArray(line.text)} index={index} />
       ))}
     </div>
   );
